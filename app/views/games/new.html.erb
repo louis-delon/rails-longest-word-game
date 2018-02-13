@@ -1,0 +1,14 @@
+<h1 class= "text-center">New Game</h1>
+<p>
+  <ul class= "text-center">
+    <% @letters.each do |l| %>
+      <li class= "display_letters"><%= l %></li>
+    <% end %>
+  </ul>
+</p>
+<p>What is the longest word you can find?</p>
+<form action="score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="word" placeholder="enter your word">
+  <input type="submit" value="play">
+</form>
